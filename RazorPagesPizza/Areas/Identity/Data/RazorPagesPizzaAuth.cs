@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RazorPagesPizza.Areas.Identity.Data;
 
-public class RazorPagesPizzaAuth : IdentityDbContext<IdentityUser>
+public class RazorPagesPizzaAuth : IdentityDbContext<RazorPagesPizzaUser>
 {
     public RazorPagesPizzaAuth(DbContextOptions<RazorPagesPizzaAuth> options)
         : base(options)

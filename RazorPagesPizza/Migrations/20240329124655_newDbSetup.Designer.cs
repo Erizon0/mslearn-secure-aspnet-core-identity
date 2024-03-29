@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RazorPagesPizza.Areas.Identity.Data;
 
@@ -11,9 +12,11 @@ using RazorPagesPizza.Areas.Identity.Data;
 namespace RazorPagesPizza.Migrations
 {
     [DbContext(typeof(RazorPagesPizzaAuth))]
-    partial class RazorPagesPizzaAuthModelSnapshot : ModelSnapshot
+    [Migration("20240329124655_newDbSetup")]
+    partial class newDbSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -206,10 +209,6 @@ namespace RazorPagesPizza.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Uid")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
