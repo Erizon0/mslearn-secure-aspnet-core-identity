@@ -66,7 +66,7 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            [EmailAddress]
+            // [EmailAddress]
             public string Email { get; set; }
 
             /// <summary>
@@ -102,17 +102,23 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
+
+
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-
             if (ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                // var user = await UserManager.FindByNameAsync(userName);
+                // var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                
+                var user   = await _signInManager.UserManager.FindByNameAsync(Input.Email);
+                var result = await _signInManager.CheckLdap(user, Input.Password);
+                // return LocalRedirect(returnUrl);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");

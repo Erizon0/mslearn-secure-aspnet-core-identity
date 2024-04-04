@@ -9,12 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6624e9e0-2289-4659-84fc-8c8f7cfe1ac1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/SignInManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/UserManagerExtentions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/LdapAuth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,40 +29,76 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Http/Authentication.Abstractions/src/AuthenticationProperties.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Http/Authentication.Abstractions/src/IAuthenticationSchemeProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Core/src/SignInManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/IdentityOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/PasswordValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/SignInOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/SignInResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Mvc/Mvc.TagHelpers/src/ValidationSummaryTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/dff486f2d78d3f932d0f9bfa38043f85e358fb8c/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/dff486f2d78d3f932d0f9bfa38043f85e358fb8c/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7578e5d182044e2f9d489913c17820216b8b0/4a/6a819b0e/IPasswordHasher`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7578e5d182044e2f9d489913c17820216b8b0/95/e967993d/IUserPasswordStore`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8e6c1f4b90264bd9bb5725baad8b1143458a0/e5/ffe49ad7/ValidationSummary.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2eZuSsQF1sivck7BFfJbTaVCxdK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Remove__email",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.RazorPagesPizza.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Remove__email&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\ramon.rampaart\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ramon.rampaart\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\ramon.rampaart\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\ramon.rampaart\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\ramon.rampaart\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\ramon.rampaart\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="RazorPagesPizza" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="RazorPagesPizza" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Launch Settings Profile.RazorPagesPizza" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -67,7 +107,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712124424407</updated>
-      <workItem from="1712124425585" duration="6756000" />
+      <workItem from="1712124425585" duration="22418000" />
+      <workItem from="1712210044471" duration="5922000" />
     </task>
     <servers />
   </component>
