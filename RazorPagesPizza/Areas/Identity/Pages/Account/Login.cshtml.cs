@@ -1,5 +1,6 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
+
 #nullable disable
 
 using System;
@@ -14,19 +15,18 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using RazorPagesPizza.Areas.Identity.Data;
+using SignInResult = Microsoft.AspNetCore.Identity.SignInResult;
 
-namespace RazorPagesPizza.Areas.Identity.Pages.Account
-{
-    public class LoginModel : PageModel
-    {
+namespace RazorPagesPizza.Areas.Identity.Pages.Account {
+    public class LoginModel : PageModel {
         private readonly SignInManager<RazorPagesPizzaUser> _signInManager;
-        private readonly ILogger<LoginModel> _logger;
+        private readonly ILogger<LoginModel>                _logger;
 
-        public LoginModel(SignInManager<RazorPagesPizzaUser> signInManager, ILogger<LoginModel> logger)
-        {
+        public LoginModel(SignInManager<RazorPagesPizzaUser> signInManager, ILogger<LoginModel> logger) {
             _signInManager = signInManager;
-            _logger = logger;
+            _logger        = logger;
         }
 
         /// <summary>
@@ -59,21 +59,20 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
-        public class InputModel
-        {
+        public class InputModel {
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            // [Required]
             // [EmailAddress]
-            public string Email { get; set; }
+            public string Name { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            // [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -83,12 +82,12 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
             /// </summary>
             [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
+            
+            public string Uid { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
-        {
-            if (!string.IsNullOrEmpty(ErrorMessage))
-            {
+        public async Task OnGetAsync(string returnUrl = null) {
+            if (!string.IsNullOrEmpty(ErrorMessage)) {
                 ModelState.AddModelError(string.Empty, ErrorMessage);
             }
 
@@ -103,38 +102,42 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
         }
 
 
-
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
-        {
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null) {
             returnUrl ??= Url.Content("~/");
 
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (ModelState.IsValid)
-            {
-                // This doesn't count login failures towards account lockout
-                // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                // var user = await UserManager.FindByNameAsync(userName);
-                // var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+            
+            if (ModelState.IsValid) {
+                SignInResult result = SignInResult.Failed;
+                if (!Input.Name.IsNullOrEmpty()) {
+                    var user = await _signInManager.UserManager.FindByNameAsync(Input.Name);
+                    result = await _signInManager.CheckLdap(user, Input.Password);
+                }
+
+                if (!Input.Uid.IsNullOrEmpty()) {
+                    var user = await _signInManager.UserManager.FindByUidAsync(Input.Uid);
+                    if (user != null) {
+                        await _signInManager.SignInAsync(user, false);
+                        return LocalRedirect(returnUrl);
+                    }
+                }
                 
-                var user   = await _signInManager.UserManager.FindByNameAsync(Input.Email);
-                var result = await _signInManager.CheckLdap(user, Input.Password);
-                // return LocalRedirect(returnUrl);
-                if (result.Succeeded)
-                {
+
+                if (result.Succeeded) {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+
+                if (result.RequiresTwoFactor) {
+                    return RedirectToPage("./LoginWith2fa",
+                                          new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
                 }
-                if (result.IsLockedOut)
-                {
+
+                if (result.IsLockedOut) {
                     _logger.LogWarning("User account locked out.");
                     return RedirectToPage("./Lockout");
                 }
-                else
-                {
+                else {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                     return Page();
                 }

@@ -17,7 +17,7 @@ public static class SignInManagerExtentions {
         bool isAllowed = await sim.UserManager.IsAllowed(user);
         if (isAllowed) {
             var confirm = await LdapAuth(user, password);
-            sim.SignInAsync(user, isPersistent: false);
+            await sim.SignInAsync(user, isPersistent: false);
             return confirm ? SignInResult.Success : SignInResult.Failed;
         }
         return SignInResult.NotAllowed;

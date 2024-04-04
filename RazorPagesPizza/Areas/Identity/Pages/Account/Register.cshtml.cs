@@ -111,8 +111,9 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
                 else {
                     user.Uid = Input.Uid;
                 }
+                string userName = user.FirstName + "." + user.LastName; 
                 
-                await _userStore.SetUserNameAsync(user, user.FirstName, CancellationToken.None); 
+                await _userStore.SetUserNameAsync(user, userName, CancellationToken.None); 
                 var result = await _userManager.CreateAsync(user, "Tummers2024!");
 
                 if (result.Succeeded)

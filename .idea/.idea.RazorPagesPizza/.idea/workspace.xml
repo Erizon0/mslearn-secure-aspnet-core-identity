@@ -9,16 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6624e9e0-2289-4659-84fc-8c8f7cfe1ac1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/SignInManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/UserManagerExtentions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/LdapAuth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/SignInManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Data/SignInManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Login.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Pages/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Pages/Shared/_LoginPartial.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712124424407</updated>
       <workItem from="1712124425585" duration="22418000" />
-      <workItem from="1712210044471" duration="5922000" />
+      <workItem from="1712210044471" duration="8458000" />
     </task>
     <servers />
   </component>
