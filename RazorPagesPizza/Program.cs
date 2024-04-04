@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RazorPagesPizza.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.UI;
 using Microsoft.AspNetCore.Mvc.Authorization;
@@ -14,26 +15,15 @@ var connectionString = builder.Configuration.GetConnectionString("RazorPagesPizz
 builder.Services.AddDbContext<RazorPagesPizzaAuth>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<RazorPagesPizzaUser>(options => options.SignIn.RequireConfirmedAccount = false)
+       .AddRoles<IdentityRole>()
        .AddEntityFrameworkStores<RazorPagesPizzaAuth>();
 
-
-// builder.Services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
-// {
-//     microsoftOptions.ClientId     = builder.Configuration["Authentication:Microsoft:ClientId"];
-//     microsoftOptions.ClientSecret = builder.Configuration["Authentication:Microsoft:ClientSecret"];
-// });
-
-// builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-//        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"));
-//
-// builder.Services.AddControllersWithViews(options => {
-//     var policy = new AuthorizationPolicyBuilder()
-//                  .RequireAuthenticatedUser()
-//                  .Build();
-//     options.Filters.Add(new AuthorizeFilter(policy));
-// });
-// builder.Services.AddRazorPages()
-//        .AddMicrosoftIdentityUI();
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("SuperAdmin", policy => policy.RequireRole("SuperAdmin"));
+    options.AddPolicy("Admin",      policy => { policy.RequireRole("SuperAdmin", "Admin"); });
+    options.AddPolicy("Expedition", policy => { policy.RequireRole("SuperAdmin", "Admin", "Expedition"); });
+    options.AddPolicy("User",       policy => { policy.RequireRole("SuperAdmin", "Admin", "Expedition", "User"); });
+});
 
 // Add services to the container.
 builder.Services.AddRazorPages();
@@ -55,5 +45,17 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+using (var scope = app.Services.CreateScope()) {
+    // var userManager = scope.ServiceProvider.GetRequiredService<UserManager<RazorPagesPizzaUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles       = new[] { "SuperAdmin", "Admin", "Expedition", "User" };
+
+    foreach (string role in roles) {
+        if (!await roleManager.RoleExistsAsync(role)) {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
 
 app.Run();

@@ -86,6 +86,8 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
             [Display(Name = "UID")]
             public string Uid { get; set; }
             
+            [Required]
+            public string Role { get; set; }
         }
 
 
@@ -115,11 +117,15 @@ namespace RazorPagesPizza.Areas.Identity.Pages.Account
                 
                 await _userStore.SetUserNameAsync(user, userName, CancellationToken.None); 
                 var result = await _userManager.CreateAsync(user, "Tummers2024!");
-
+                
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account.");
-                    return LocalRedirect(returnUrl);
+                    var roleResult = await _userManager.AddToRoleAsync(user, Input.Role);
+                    if (roleResult.Succeeded) {
+                        _logger.LogInformation("UserRole added");
+                        return LocalRedirect(returnUrl);
+                    }
                 }
                 foreach (var error in result.Errors)
                 {
