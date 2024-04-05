@@ -25,6 +25,10 @@ namespace  RazorPagesPizza.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public static string Email => "Email";
 
+        public static string ChooseOther => "ChooseOther";
+
+        public static string ModifyOther => "ModifyOther";
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -72,6 +76,10 @@ namespace  RazorPagesPizza.Areas.Identity.Pages.Account.Manage
         ///     directly from your code. This API may change or be removed in future releases.
         /// </summary>
         public static string EmailNavClass(ViewContext viewContext) => PageNavClass(viewContext, Email);
+
+        public static string ChooseOtherNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChooseOther);
+        
+        public static string ModifyOtherNavClass(ViewContext viewContext) => PageNavClass(viewContext, ModifyOther);
 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used

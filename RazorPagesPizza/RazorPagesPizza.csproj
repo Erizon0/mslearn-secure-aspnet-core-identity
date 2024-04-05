@@ -26,4 +26,10 @@
     <PackageReference Include="System.DirectoryServices.AccountManagement" Version="7.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Areas\Identity\Pages\Account\Manage\ModifyOther.cshtml.cs">
+      <DependentUpon>ModifyOther.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

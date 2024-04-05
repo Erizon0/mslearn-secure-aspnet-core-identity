@@ -9,14 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6624e9e0-2289-4659-84fc-8c8f7cfe1ac1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ChooseOther.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ChooseOther.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ModifyOther.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ModifyOther.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/dataSources/59e7114d-0f80-480d-84b5-d261d3d87292.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RazorPagesPizza/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Register.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Pages/AdminsOnly.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Pages/AdminsOnly.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/ManageNavPages.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RazorPagesPizza/RazorPagesPizza.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +37,10 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/SignInOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/SignInResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Identity/Extensions.Core/src/UserManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Mvc/Mvc.Razor/src/RazorPageBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Mvc/Mvc.TagHelpers/src/ValidationSummaryTagHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/d0ca5a8d20ac50a33d5451e998a5d411a810c8d7/src/Security/Authorization/Core/src/AuthorizeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/d099f075e45d2aa6007a22b71b45a08758559f80/src/libraries/Microsoft.Extensions.Configuration.Abstractions/src/ConfigurationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/dff486f2d78d3f932d0f9bfa38043f85e358fb8c/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/dff486f2d78d3f932d0f9bfa38043f85e358fb8c/src/libraries/System.Private.CoreLib/src/System/Threading/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7578e5d182044e2f9d489913c17820216b8b0/4a/6a819b0e/IPasswordHasher`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -107,7 +111,10 @@
       <option name="presentableId" value="Default" />
       <updated>1712124424407</updated>
       <workItem from="1712124425585" duration="22418000" />
-      <workItem from="1712210044471" duration="18642000" />
+      <workItem from="1712210044471" duration="25788000" />
+      <workItem from="1712296273348" duration="658000" />
+      <workItem from="1712297115419" duration="5328000" />
+      <workItem from="1712306359402" duration="4970000" />
     </task>
     <servers />
   </component>
